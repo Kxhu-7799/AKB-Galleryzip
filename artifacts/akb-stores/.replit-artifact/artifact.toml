@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "AKB Stores"
+version = "1.0.0"
+id = "artifacts/akb-stores"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26032
+
+[services.development]
+run = "pnpm --filter @workspace/akb-stores run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/akb-stores", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/akb-stores/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26032"
+BASE_PATH = "/"
