@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import { ShoppingCart } from "lucide-react";
 
+// Prefix hash links with / so they work from any page (e.g. /collections/figurative-works → /#collections)
+const NAV_LINKS = [
+  { label: "Collections", href: "/#collections" },
+  { label: "Process",     href: "/#process" },
+  { label: "Shop",        href: "/#shop" },
+  { label: "Commission",  href: "/#commission" },
+];
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
@@ -27,10 +35,11 @@ export function Navbar() {
         </Link>
         
         <nav className="hidden md:flex items-center gap-8 text-sm uppercase tracking-[0.15em] font-light text-foreground/80">
-          <Link href="#collections" className="hover:text-primary transition-colors">Collections</Link>
-          <Link href="#process" className="hover:text-primary transition-colors">Process</Link>
-          <Link href="#shop" className="hover:text-primary transition-colors">Shop</Link>
-          <Link href="#commission" className="hover:text-primary transition-colors">Commission</Link>
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} className="hover:text-primary transition-colors">
+              {link.label}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-6">
@@ -40,12 +49,12 @@ export function Navbar() {
               0
             </span>
           </button>
-          <Link
-            href="#enquire"
+          <a
+            href="/#enquire"
             className="hidden md:inline-flex px-6 py-2 border border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground text-sm uppercase tracking-[0.15em] transition-all duration-500 ease-out"
           >
             Enquire
-          </Link>
+          </a>
         </div>
       </div>
     </header>

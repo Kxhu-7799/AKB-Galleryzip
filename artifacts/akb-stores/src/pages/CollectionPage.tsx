@@ -1,10 +1,10 @@
 import { useParams, Link } from 'wouter';
 import { motion } from 'framer-motion';
-import { getCollectionBySlug } from '@/data/collectionData';
+import { type Piece, getCollectionBySlug } from '@/data/collectionData';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
-function PieceCard({ piece, index }: { piece: ReturnType<typeof getCollectionBySlug>['pieces'][0]; index: number }) {
+function PieceCard({ piece, index }: { piece: Piece; index: number }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}

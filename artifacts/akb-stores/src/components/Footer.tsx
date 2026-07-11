@@ -15,13 +15,19 @@ export function Footer() {
           <div>
             <p className="text-[10px] uppercase tracking-[0.25em] text-foreground/40 mb-6">Navigate</p>
             <ul className="space-y-3">
-              {['Collections', 'Current Works', 'The Process', 'Commission', 'About the Studio'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Collections',     href: '/#collections' },
+                { label: 'Current Works',   href: '/#shop' },
+                { label: 'The Process',     href: '/#process' },
+                { label: 'Commission',      href: '/#commission' },
+                { label: 'About the Studio', href: '/#commission' },
+              ].map((item) => (
+                <li key={item.label}>
                   <a
-                    href="#"
+                    href={item.href}
                     className="text-sm text-foreground/60 hover:text-primary transition-colors tracking-wide"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 </li>
               ))}

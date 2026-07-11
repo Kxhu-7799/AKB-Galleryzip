@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export function Commission() {
   return (
     <section
-      id="commission enquire"
+      id="commission"
       className="py-32 md:py-56 bg-background border-b border-border relative overflow-hidden"
     >
       {/* Decorative ambient glow */}
