@@ -7,7 +7,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <p className="text-4xl font-serif tracking-widest text-foreground mb-4">AKB</p>
             <p className="text-sm font-light text-foreground/50 leading-relaxed max-w-[200px]">
-              Bronze & Stone Atelier. Handcast in small editions since 2009.
+              Bronze & Stone Atelier. Handcast in small editions since 2019.
             </p>
           </div>
 
