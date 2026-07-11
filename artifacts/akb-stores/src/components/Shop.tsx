@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ShoppingCart } from 'lucide-react';
+import { Link } from 'wouter';
 
 const products = [
   { id: 1, name: "The Watcher", spec: "Cast Bronze, Ed. 5/12", price: "£2,400" },
@@ -26,9 +27,12 @@ export function Shop() {
           <h2 className="text-5xl md:text-7xl font-serif text-foreground tracking-wide">
             Current Works
           </h2>
-          <button className="text-sm uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors pb-2 border-b border-transparent hover:border-primary/30 self-start md:self-end">
+          <Link
+            href="/inventory"
+            className="text-sm uppercase tracking-[0.15em] text-foreground/70 hover:text-primary transition-colors pb-2 border-b border-transparent hover:border-primary/30 self-start md:self-end"
+          >
             View All Inventory →
-          </button>
+          </Link>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
