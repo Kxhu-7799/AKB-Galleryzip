@@ -1,15 +1,18 @@
-# [Project name]
+# AKB Stores
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A bronze and stone gallery storefront with collection browsing and an inventory page.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- After importing or cloning, run `pnpm install --frozen-lockfile` to restore the existing dependencies.
+- Start the managed `artifacts/akb-stores: web` workflow for the storefront preview at `/`. It runs `pnpm --filter @workspace/akb-stores run dev` and supplies the required `PORT` and `BASE_PATH`.
+- `pnpm --filter @workspace/akb-stores run typecheck` — check the storefront's TypeScript.
+- Start the managed `artifacts/api-server: API Server` workflow for the API at `/api` (port 8080).
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `DATABASE_URL` is required only when using the database package; the current storefront and API health route do not require a database.
 
 ## Stack
 
